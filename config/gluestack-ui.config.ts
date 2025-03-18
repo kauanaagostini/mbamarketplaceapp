@@ -434,7 +434,7 @@ export const gluestackUIConfig = createConfig({
       danger: '#DC3545',
       success: '#28A745',
       shape: '#F5EAEA',
-      background: 'FBF4F4',
+      background: '#FBF4F4',
     },
     space: {
       px: '1px',

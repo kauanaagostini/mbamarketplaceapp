@@ -13,6 +13,7 @@ export function Routes() {
     <Box flex={1} bg="$shape">
       <NavigationContainer theme={theme}>
         <AppRoutes />
+        {/* <AuthRoutes /> */}
       </NavigationContainer>
     </Box>
   )

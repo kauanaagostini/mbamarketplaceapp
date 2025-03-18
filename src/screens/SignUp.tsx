@@ -15,7 +15,7 @@ import { Button } from '@components/Button'
 import { UserPhoto } from '@components/UserPhoto'
 
 import Logo from '@assets/Logo.svg'
-import defaultUserPhotoImg from '@assets/image-upload.png'
+import defaultUserPhotoImg from '@assets/image-upload-full.png'
 import UserSvg from '@assets/icon/user.svg'
 import PhoneSvg from '@assets/icon/call.svg'
 import EmailSvg from '@assets/icon/mail.svg'
@@ -57,21 +57,12 @@ export function SignUp() {
           />
         </Center>
         <Center gap="$4">
-          <Box
+          <UserPhoto
+            source={defaultUserPhotoImg}
+            alt="Imagem do usuário"
             w={120}
             h={120}
-            backgroundColor="$shape"
-            justifyContent="center"
-            alignItems="center"
-            rounded={12}
-          >
-            <UserPhoto
-              source={defaultUserPhotoImg}
-              alt="Imagem do usuário"
-              w="$10"
-              h="$10"
-            />
-          </Box>
+          />
           <Input
             placeholder="Seu nome completo"
             label="Nome"

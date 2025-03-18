@@ -15,6 +15,7 @@ type Props = ComponentProps<typeof InputField> & {
   label?: string
   rightIcon?: React.FC
   leftIcon?: React.FC
+  width?: number | string
   showPassword?: () => void
 }
 
@@ -23,10 +24,11 @@ export function Input({
   leftIcon,
   label,
   showPassword,
+  width = '$full',
   ...rest
 }: Props) {
   return (
-    <VStack width="$full">
+    <VStack width={width}>
       <Text
         fontFamily="$label"
         fontWeight="$medium"
