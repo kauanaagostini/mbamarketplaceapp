@@ -38,6 +38,7 @@ export function SignUp() {
       return !showState
     })
   }
+
   const handleConfirmPasswordState = () => {
     setShowConfirmPassword((showState) => {
       return !showState

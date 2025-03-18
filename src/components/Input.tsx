@@ -20,11 +20,12 @@ type Props = ComponentProps<typeof InputField> & {
 }
 
 export function Input({
+  isReadyOnly = false,
+  label,
   rightIcon,
   leftIcon,
-  label,
-  showPassword,
   width = '$full',
+  showPassword,
   ...rest
 }: Props) {
   return (
@@ -44,6 +45,8 @@ export function Input({
         $focus={{
           borderColor: '$gray400',
         }}
+        isReadOnly={isReadyOnly}
+        opacity={isReadyOnly ? 0.5 : 1}
       >
         {leftIcon && (
           <InputSlot>

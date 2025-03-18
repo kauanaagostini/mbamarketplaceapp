@@ -22,6 +22,7 @@ export function Button({
   title,
   height = 56,
   variant = 'solid',
+  icon = false,
   isLoading = false,
   ...rest
 }: Props) {
@@ -35,7 +36,7 @@ export function Button({
       rounded={10}
       $active-bg={variant === 'outline' ? '$shape' : '$orangeDark'}
       disabled={isLoading}
-      justifyContent={isLoading ? 'center' : 'space-between'}
+      justifyContent={isLoading || !icon ? 'center' : 'space-between'}
       {...rest}
     >
       {isLoading ? (
@@ -52,10 +53,12 @@ export function Button({
           >
             {title}
           </Text>
-          <Icon
-            as={variant === 'outline' ? ArrowIconOrange : ArrowIconWhite}
-            color="transparent"
-          />
+          {icon && (
+            <Icon
+              as={variant === 'outline' ? ArrowIconOrange : ArrowIconWhite}
+              color="transparent"
+            />
+          )}
         </>
       )}
     </GluestackButton>
