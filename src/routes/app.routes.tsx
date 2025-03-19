@@ -72,7 +72,10 @@ export function AppRoutes() {
       <Screen
         name="product"
         component={Product}
-        options={{ tabBarItemStyle: { display: 'none' } }}
+        options={{
+          tabBarItemStyle: { display: 'none' },
+          tabBarStyle: { display: 'none' },
+        }}
       />
     </Navigator>
   )

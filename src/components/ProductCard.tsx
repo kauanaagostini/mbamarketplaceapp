@@ -1,6 +1,6 @@
 import { ProductDTO } from '@dtos/ProductDTO'
 import { Box, HStack, Image, Text, VStack } from '@gluestack-ui/themed'
-import { TouchableOpacity, TouchableOpacityProps } from 'react-native'
+import { Platform, TouchableOpacity, TouchableOpacityProps } from 'react-native'
 
 import ImageTest from '@assets/image/1e6bb3c6-9f03-4651-93c7-18dfedc28364.png'
 
@@ -47,6 +47,7 @@ export function ProductCard({ data, ...rest }: Props) {
               fontSize="$2xs"
               textTransform="uppercase"
               color="$gray500"
+              paddingBottom={Platform.OS === 'android' ? 0 : 0.5}
             >
               R$
             </Text>
@@ -55,6 +56,7 @@ export function ProductCard({ data, ...rest }: Props) {
               fontWeight="$bold"
               fontSize="$sm"
               color="$gray500"
+              paddingBottom={Platform.OS === 'android' ? 2 : 0}
             >
               {handleProductPrice(data.priceInCents)}
             </Text>

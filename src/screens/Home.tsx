@@ -1,10 +1,12 @@
+import { useState } from 'react'
+import { FlatList } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import { VStack } from '@gluestack-ui/themed'
+
+import { AppNavigatorRoutesProps } from '@routes/app.routes'
 
 import { HomeHeader } from '@components/HomeHeader'
 import { ProductCard } from '@components/ProductCard'
-
-import { useState } from 'react'
-import { FlatList } from 'react-native'
 import { SearchProducts } from '@components/SearchProducts'
 
 export function Home() {
@@ -71,6 +73,12 @@ export function Home() {
     },
   ])
 
+  const navigation = useNavigation<AppNavigatorRoutesProps>()
+
+  const handleOpenProductDetails = () => {
+    navigation.navigate('product')
+  }
+
   return (
     <VStack flex={1}>
       <VStack gap="$6" bg="$white" pt="$16" pb="$6" px="$6" rounded={20}>
@@ -81,7 +89,9 @@ export function Home() {
         <FlatList
           data={product}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <ProductCard data={item} />}
+          renderItem={({ item }) => (
+            <ProductCard data={item} onPress={handleOpenProductDetails} />
+          )}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{
             paddingTop: 12,

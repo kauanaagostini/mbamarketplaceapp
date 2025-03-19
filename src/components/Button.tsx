@@ -16,6 +16,7 @@ type Props = ComponentProps<typeof GluestackButton> & {
   height?: number
   isLoading?: boolean
   icon?: boolean
+  fontSize?: '$md' | '$sm'
 }
 
 export function Button({
@@ -24,6 +25,7 @@ export function Button({
   variant = 'solid',
   icon = false,
   isLoading = false,
+  fontSize = '$md',
   ...rest
 }: Props) {
   return (
@@ -49,7 +51,7 @@ export function Button({
             color={variant === 'outline' ? '$orangeBase' : 'white'}
             fontFamily="$action"
             fontWeight="$medium"
-            fontSize="$md"
+            fontSize={fontSize}
           >
             {title}
           </Text>
