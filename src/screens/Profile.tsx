@@ -1,13 +1,17 @@
 import { useState } from 'react'
-import { Alert, ScrollView, TouchableOpacity } from 'react-native'
+import { ScrollView, TouchableOpacity } from 'react-native'
+import { Controller, useForm } from 'react-hook-form'
 import { Box, Heading, HStack, useToast, VStack } from '@gluestack-ui/themed'
 import { gluestackUIConfig } from '../../config/gluestack-ui.config'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
 import * as ImagePicker from 'expo-image-picker'
 import * as FileSystem from 'expo-file-system'
 
 import { UserPhoto } from '@components/UserPhoto'
 import { Input } from '@components/Input'
 import { Button } from '@components/Button'
+import { ToastMessage } from '@components/ToastMessage'
 
 import defaultUserPhotoImg from '@assets/image-upload-full.png'
 import LogOut from '@assets/icon/logout.svg'
@@ -17,7 +21,26 @@ import EmailFocusSvg from '@assets/icon/mail-focus.svg'
 import PasswordSvg from '@assets/icon/access.svg'
 import EyeIconSvg from '@assets/icon/view.svg'
 import EyeIconOffSvg from '@assets/icon/view-off.svg'
-import { ToastMessage } from '@components/ToastMessage'
+
+type FormDataProps = {
+  name: string
+  phone: string
+  email?: string
+  password?: string
+  new_password?: string | null
+}
+
+const profileSchema = yup.object({
+  name: yup.string().required('Informe o nome'),
+  phone: yup.string().required('Informe o telefone'),
+  email: yup.string(),
+  password: yup.string(),
+  new_password: yup
+    .string()
+    .min(6, 'A senha deve ter pelo menos 6 dígitos')
+    .nullable()
+    .transform((value) => (!!value ? value : null)),
+})
 
 export function Profile() {
   const { tokens } = gluestackUIConfig
@@ -28,6 +51,19 @@ export function Profile() {
   )
 
   const toast = useToast()
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormDataProps>({
+    resolver: yupResolver(profileSchema),
+    defaultValues: {
+      name: 'Kauana',
+      phone: '(11) 99999-6666',
+      email: 'kauana@exemplo.com.br',
+    },
+  })
 
   const handlePasswordState = () => {
     setShowPassword((showState) => {
@@ -83,6 +119,10 @@ export function Profile() {
     }
   }
 
+  const handleUpdateProfile = (data: FormDataProps) => {
+    console.log(data)
+  }
+
   return (
     <VStack mt="$24" px="$10">
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -110,45 +150,90 @@ export function Profile() {
           </TouchableOpacity>
         </HStack>
         <VStack flex={1} gap="$5">
-          <Input
-            label="nome"
-            leftIcon={UserFocusSvg}
-            value="Kauana"
-            placeholder="Seu nome completo"
+          <Controller
+            control={control}
+            name="name"
+            render={({ field: { onChange, value } }) => (
+              <Input
+                placeholder="Seu nome completo"
+                label="Nome"
+                leftIcon={UserFocusSvg}
+                onChangeText={onChange}
+                value={value}
+                errorMessage={errors.name?.message}
+              />
+            )}
           />
-          <Input
-            label="telefone"
-            leftIcon={PhoneFocusSvg}
-            value="(55) 99999-9999"
-            placeholder="(00) 00000-0000"
+          <Controller
+            control={control}
+            name="phone"
+            render={({ field: { onChange, value } }) => (
+              <Input
+                placeholder="(00) 00000-0000"
+                label="Telefone"
+                leftIcon={PhoneFocusSvg}
+                onChangeText={onChange}
+                value={value}
+                errorMessage={errors.phone?.message}
+              />
+            )}
           />
           <Heading fontFamily="$title" fontWeight="$bold" fontSize="$md">
             Acesso
           </Heading>
-          <Input
-            label="e-mail"
-            leftIcon={EmailFocusSvg}
-            value="kauana@email.com"
-            placeholder="Seu e-mail"
-            isReadyOnly
+          <Controller
+            control={control}
+            name="email"
+            render={({ field: { onChange, value } }) => (
+              <Input
+                label="e-mail"
+                leftIcon={EmailFocusSvg}
+                placeholder="Seu e-mail"
+                isReadyOnly
+                onChangeText={onChange}
+                value={value}
+                errorMessage={errors.email?.message}
+              />
+            )}
           />
-          <Input
-            label="senha atual"
-            leftIcon={PasswordSvg}
-            placeholder="Sua senha"
-            rightIcon={showPassword ? EyeIconSvg : EyeIconOffSvg}
-            secureTextEntry={!showPassword}
-            showPassword={handlePasswordState}
+          <Controller
+            control={control}
+            name="password"
+            render={({ field: { onChange } }) => (
+              <Input
+                label="senha atual"
+                leftIcon={PasswordSvg}
+                placeholder="Sua senha"
+                rightIcon={showPassword ? EyeIconSvg : EyeIconOffSvg}
+                secureTextEntry={!showPassword}
+                showPassword={handlePasswordState}
+                onChangeText={onChange}
+                errorMessage={errors.password?.message}
+              />
+            )}
           />
-          <Input
-            label="nova senha"
-            leftIcon={PasswordSvg}
-            placeholder="Sua nova senha"
-            rightIcon={showNewPassword ? EyeIconSvg : EyeIconOffSvg}
-            secureTextEntry={!showNewPassword}
-            showPassword={handleNewPasswordState}
+          <Controller
+            control={control}
+            name="new_password"
+            render={({ field: { onChange } }) => (
+              <Input
+                label="nova senha"
+                leftIcon={PasswordSvg}
+                placeholder="Sua nova senha"
+                rightIcon={showNewPassword ? EyeIconSvg : EyeIconOffSvg}
+                secureTextEntry={!showNewPassword}
+                showPassword={handleNewPasswordState}
+                onChangeText={onChange}
+                errorMessage={errors.new_password?.message}
+                onSubmitEditing={handleSubmit(handleUpdateProfile)}
+                returnKeyType="send"
+              />
+            )}
           />
-          <Button title="Atualizar Cadastro" />
+          <Button
+            title="Atualizar Cadastro"
+            onPress={handleSubmit(handleUpdateProfile)}
+          />
         </VStack>
       </ScrollView>
     </VStack>
