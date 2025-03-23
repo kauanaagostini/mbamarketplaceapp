@@ -1,0 +1,159 @@
+{
+  "types": [
+    {
+      "id": "name",
+      "label": "Nome",
+      "placeHolder": "Seu nome completo",
+      "icon": "UserSvg"
+    }
+
+]}
+
+[
+  {"attachments": [[Object]], "category": {"id": "6a285f24-ae78-42a1-835b-fd7f4a982242", "slug": "informatica", "title": "Informática"}, "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart", "id": "263b72ce-7828-48f3-9d56-223b90e07639", "owner": {"avatar": null, "email": "seller@mba.com", "id": "a0fbbd4e-efb6-4686-b822-c8987a53a605", "name": "Seller", "phone": "(282) 598-7435 x6515"}, "priceInCents": 93733, "status": "sold", "title": "Licensed Wooden Tuna"}, 
+  {"attachments": [[Object]], "category": {"id": "043e06f2-22aa-4827-a807-3ed0440483e6", "slug": "livros", "title": "Livros"}, "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart", "id": "d57cbc7b-e777-4aa7-af73-88ab943142c6", "owner": {"avatar": null, "email": "seller@mba.com", "id": "a0fbbd4e-efb6-4686-b822-c8987a53a605", "name": "Seller", "phone": "(282) 598-7435 x6515"}, "priceInCents": 20579, "status": "sold", "title": "Intelligent Cotton Shirt"}, 
+  {"attachments": [[Object]], "category": {"id": "9b57adbe-f91c-4406-8535-24d5ed2ef8a9", "slug": "alimentos", "title": "Alimentos"}, "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals", "id": "d2c681d7-1883-418c-b36c-60425415a491", "owner": {"avatar": null, "email": "seller@mba.com", "id": "a0fbbd4e-efb6-4686-b822-c8987a53a605", "name": "Seller", "phone": "(282) 598-7435 x6515"}, "priceInCents": 29551, "status": "sold", "title": "Elegant Wooden Towels"}, 
+  {"attachments": [[Object]], "category": {"id": "9b57adbe-f91c-4406-8535-24d5ed2ef8a9", "slug": "alimentos", "title": "Alimentos"}, "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality", "id": "74248f2c-03ba-47a1-aaea-8d42e7f998fc", "owner": {"avatar": null, "email": "seller@mba.com", "id": "a0fbbd4e-efb6-4686-b822-c8987a53a605", "name": "Seller", "phone": "(282) 598-7435 x6515"}, "priceInCents": 90329, "status": "cancelled", "title": "Bespoke Soft Shirt"}, 
+  {"attachments": [[Object]], "category": {"id": "6a285f24-ae78-42a1-835b-fd7f4a982242", "slug": "informatica", "title": "Informática"}, "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart", "id": "d93cc8e7-6df5-4cc0-bb89-bf512c336d81", "owner": {"avatar": null, "email": "seller@mba.com", "id": "a0fbbd4e-efb6-4686-b822-c8987a53a605", "name": "Seller", "phone": "(282) 598-7435 x6515"}, "priceInCents": 76223, "status": "cancelled", "title": "Intelligent Plastic Salad"}, 
+  {"attachments": [[Object]], "category": {"id": "fc03578f-6b2c-4140-ad8d-3183f7c3cd1a", "slug": "brinquedos", "title": "Brinquedos"}, "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J", "id": "3b815591-fa18-4293-8ed3-ee831b9f417e", "owner": {"avatar": null, "email": "seller@mba.com", "id": "a0fbbd4e-efb6-4686-b822-c8987a53a605", "name": "Seller", "phone": "(282) 598-7435 x6515"}, "priceInCents": 56358, "status": "cancelled", "title": "Modern Plastic Gloves"}
+  {"attachments": [[Object]], "category": {"id": "94a3b7b6-5139-4d8a-afe6-768517182e0c", "slug": "eletrodomesticos", "title": "Eletrodomésticos"}, "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals", "id": "674032b9-6e49-4311-b0fe-b52b6209d3ac", "owner": {"avatar": null, "email": "seller@mba.com", "id": "a0fbbd4e-efb6-4686-b822-c8987a53a605", "name": "Seller", "phone": "(282) 598-7435 x6515"}, "priceInCents": 21858, "status": "available", "title": "Handmade Fresh Shoes"}, 
+  {"attachments": [[Object]], "category": {"id": "6956e400-9b6c-4c21-956c-c652e3d2d1d9", "slug": "esportes", "title": "Esportes"}, "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles", "id": "918ee62c-fb5e-4768-970f-94bb5824a132", "owner": {"avatar": null, "email": "seller@mba.com", "id": "a0fbbd4e-efb6-4686-b822-c8987a53a605", "name": "Seller", "phone": "(282) 598-7435 x6515"}, "priceInCents": 90951, "status": "available", "title": "Ergonomic Rubber Salad"}, 
+  {"attachments": [[Object]], "category": {"id": "94a3b7b6-5139-4d8a-afe6-768517182e0c", "slug": "eletrodomesticos", "title": "Eletrodomésticos"}, "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive", "id": "b187c597-2f0d-40c5-921d-17c99e7d5533", "owner": {"avatar": null, "email": "seller@mba.com", "id": "a0fbbd4e-efb6-4686-b822-c8987a53a605", "name": "Seller", "phone": "(282) 598-7435 x6515"}, "priceInCents": 67069, "status": "available", "title": "Licensed Concrete Salad"}, 
+  {"attachments": [[Object]], "category": {"id": "5c6e4d7b-712a-457c-9937-85a202085301", "slug": "moda", "title": "Moda"}, "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design", "id": "8469227d-599d-4dbb-9d18-d4cb5a114b10", "owner": {"avatar": null, "email": "seller@mba.com", "id": "a0fbbd4e-efb6-4686-b822-c8987a53a605", "name": "Seller", "phone": "(282) 598-7435 x6515"}, "priceInCents": 15572, "status": "available", "title": "Luxurious Metal Chair"}, 
+]
+
+[
+  {"attachments": [[Object]], "category": {"id": "94a3b7b6-5139-4d8a-afe6-768517182e0c", "slug": "eletrodomesticos", "title": "Eletrodomésticos"}, "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals", "id": "674032b9-6e49-4311-b0fe-b52b6209d3ac", "owner": {"avatar": null, "email": "seller@mba.com", "id": "a0fbbd4e-efb6-4686-b822-c8987a53a605", "name": "Seller", "phone": "(282) 598-7435 x6515"}, "priceInCents": 21858, "status": "available", "title": "Handmade Fresh Shoes"}, 
+  {"attachments": [[Object]], "category": {"id": "6956e400-9b6c-4c21-956c-c652e3d2d1d9", "slug": "esportes", "title": "Esportes"}, "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles", "id": "918ee62c-fb5e-4768-970f-94bb5824a132", "owner": {"avatar": null, "email": "seller@mba.com", "id": "a0fbbd4e-efb6-4686-b822-c8987a53a605", "name": "Seller", "phone": "(282) 598-7435 x6515"}, "priceInCents": 90951, "status": "available", "title": "Ergonomic Rubber Salad"}, 
+  {"attachments": [[Object]], "category": {"id": "94a3b7b6-5139-4d8a-afe6-768517182e0c", "slug": "eletrodomesticos", "title": "Eletrodomésticos"}, "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive", "id": "b187c597-2f0d-40c5-921d-17c99e7d5533", "owner": {"avatar": null, "email": "seller@mba.com", "id": "a0fbbd4e-efb6-4686-b822-c8987a53a605", "name": "Seller", "phone": "(282) 598-7435 x6515"}, "priceInCents": 67069, "status": "available", "title": "Licensed Concrete Salad"}, 
+  {"attachments": [[Object]], "category": {"id": "5c6e4d7b-712a-457c-9937-85a202085301", "slug": "moda", "title": "Moda"}, "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design", "id": "8469227d-599d-4dbb-9d18-d4cb5a114b10", "owner": {"avatar": null, "email": "seller@mba.com", "id": "a0fbbd4e-efb6-4686-b822-c8987a53a605", "name": "Seller", "phone": "(282) 598-7435 x6515"}, "priceInCents": 15572, "status": "available", "title": "Luxurious Metal Chair"}, 
+  {"attachments": [[Object]], "category": {"id": "043e06f2-22aa-4827-a807-3ed0440483e6", "slug": "livros", "title": "Livros"}, "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016", "id": "8fd86c9d-40e1-4663-bb01-f2e0f04fc9d1", "owner": {"avatar": null, "email": "seller@mba.com", "id": "a0fbbd4e-efb6-4686-b822-c8987a53a605", "name": "Seller", "phone": "(282) 598-7435 x6515"}, "priceInCents": 49563, "status": "available", "title": "Ergonomic Concrete Towels"}
+]
+
+
+const ProfileSchema = z
+  .object({
+    name: z.string().min(1, 'Informe o nome'),
+    phone: z.string().min(1, 'Informe o telefone'),
+    email: z.string().min(1, 'Informe o e-mail').email('E-mail inválido'),
+    password: z.string().optional(),
+    newPassword: z.string().optional(),
+  })
+  .refine(
+    (data) => {
+      if (data.newPassword?.length) {
+        return data.password?.length
+      }
+      return true
+    },
+    {
+      path: ['password'],
+      message: 'Informe sua senha',
+    },
+  )
+  .refine(
+    (data) => {
+      if (data.newPassword?.length) {
+        return data.newPassword !== data.password
+      }
+      return true
+    },
+    {
+      path: ['newPassword'],
+      message: 'A nova senha deve ser diferente da senha atual',
+    },
+  )
+
+  async function getUserData() {
+    try {
+      setIsLoadingUserStorageData(true)
+      const { data } = await api.get('/sellers/me')
+      const token = await storageAuthTokenGet()
+
+      if (data.seller && token) {
+        await storageUserAndTokenSave(data.seller, token)
+        userAndTokenUpdate(data.seller, token)
+      }
+    } catch (error) {
+      throw error
+    } finally {
+      setIsLoadingUserStorageData(false)
+    }
+  }
+
+  async function signOut() {
+    try {
+      setIsLoadingUserStorageData(true)
+
+      delete api.defaults.headers.common['Authorization']
+      setUser({} as UserDTO)
+      await storageUserRemove()
+      await storageAuthTokenRemove()
+    } catch (error) {
+      throw error
+    } finally {
+      setIsLoadingUserStorageData(false)
+    }
+  }
+
+  const filteredProducts = products.filter((product) => {
+    const matchesPrice =
+      (!activeFilters.minValue ||
+        product.priceInCents / 100 >= activeFilters.minValue) &&
+      (!activeFilters.maxValue ||
+        product.priceInCents / 100 <= activeFilters.maxValue)
+
+    const matchesCategory =
+      !activeFilters.categories.length ||
+      activeFilters.categories.includes(product.category.title)
+
+    return matchesPrice && matchesCategory
+  })
+
+  const filteredProducts = products.filter((product) => {
+    const matchesPrice =
+      (!activeFilters.minValue ||
+        product.priceInCents / 100 >= activeFilters.minValue) &&
+      (!activeFilters.maxValue ||
+        product.priceInCents / 100 <= activeFilters.maxValue)
+
+    const matchesCategory =
+      !activeFilters.categories.length ||
+      activeFilters.categories.includes(product.category.title)
+
+    return matchesPrice && matchesCategory
+  })
+
+  export async function handleUserPhotoSelect(
+  setUserPhoto: (uri: string) => void,
+) {
+  try {
+    const photoSelected = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      quality: 1,
+      aspect: [4, 4],
+      allowsEditing: true,
+      allowsMultipleSelection: false,
+    })
+    if (photoSelected.canceled) {
+      return
+    }
+    const photoURI = photoSelected.assets[0].uri
+    if (photoURI) {
+      const photoInfo = (await FileSystem.getInfoAsync(photoURI)) as {
+        size: number
+      }
+      if (photoInfo.size && photoInfo.size / 1024 / 1024 > 5) {
+        return Alert.alert(
+          'Essa imagem é muito grande. Escolha uma de até 5MB.',
+        )
+      }
+      setUserPhoto(photoURI)
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+
