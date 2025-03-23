@@ -9,10 +9,13 @@ import { AppNavigatorRoutesProps } from '@routes/app.routes'
 
 import ArrowRightSvg from '@assets/icon/arrow-right.svg'
 import defaultUserPhotoImg from '@assets/image-upload-full.png'
+import { useAuth } from '@hooks/useAuth'
 
 export function HomeHeader() {
   const { tokens } = gluestackUIConfig
   const navigation = useNavigation<AppNavigatorRoutesProps>()
+
+  const { user } = useAuth()
 
   const handleProfile = () => {
     navigation.navigate('profile')
@@ -34,7 +37,7 @@ export function HomeHeader() {
           fontSize="$md"
           color="$gray500"
         >
-          Olá, Kauana!
+          Olá, {user.name}!
         </Heading>
         <TouchableOpacity onPress={handleProfile}>
           <HStack gap="$2">

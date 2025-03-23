@@ -21,6 +21,7 @@ import EmailFocusSvg from '@assets/icon/mail-focus.svg'
 import PasswordSvg from '@assets/icon/access.svg'
 import EyeIconSvg from '@assets/icon/view.svg'
 import EyeIconOffSvg from '@assets/icon/view-off.svg'
+import { useAuth } from '@hooks/useAuth'
 
 type FormDataProps = {
   name: string
@@ -51,6 +52,7 @@ export function Profile() {
   )
 
   const toast = useToast()
+  const { user, signOut } = useAuth()
 
   const {
     control,
@@ -59,9 +61,9 @@ export function Profile() {
   } = useForm<FormDataProps>({
     resolver: yupResolver(profileSchema),
     defaultValues: {
-      name: 'Kauana',
-      phone: '(11) 99999-6666',
-      email: 'kauana@exemplo.com.br',
+      name: user.name,
+      phone: user.phone,
+      email: user.email,
     },
   })
 
@@ -135,7 +137,7 @@ export function Profile() {
               backgroundColor="$shape"
             />
           </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.6}>
+          <TouchableOpacity activeOpacity={0.6} onPress={signOut}>
             <Box
               borderColor="$danger"
               borderWidth={1}

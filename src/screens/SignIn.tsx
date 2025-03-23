@@ -15,22 +15,29 @@ import EyeIconSvg from '@assets/icon/view.svg'
 import EyeIconOffSvg from '@assets/icon/view-off.svg'
 import { useNavigation } from '@react-navigation/native'
 import { AuthNavigatorRoutesProps } from '@routes/auth.routes'
+import { useAuth } from '@hooks/useAuth'
 
 const signInSchema = yup.object({
   email: yup.string().required('Informe o e-mail').email('E-mail inválido'),
   password: yup.string().required('Informe a senha'),
 })
 
+type FormData = {
+  email: string
+  password: string
+}
+
 export function SignIn() {
   const [showPassword, setShowPassword] = useState(false)
 
   const navigation = useNavigation<AuthNavigatorRoutesProps>()
+  const { signIn } = useAuth()
 
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<FormData>({
     resolver: yupResolver(signInSchema),
   })
 
@@ -44,8 +51,8 @@ export function SignIn() {
     })
   }
 
-  const handleSignIn = (data: any) => {
-    console.log(data)
+  const handleSignIn = ({ email, password }: FormData) => {
+    signIn(email, password)
   }
 
   return (
@@ -65,7 +72,7 @@ export function SignIn() {
           <Controller
             control={control}
             name="email"
-            render={({ field: { onChange, value } }) => (
+            render={({ field: { onChange } }) => (
               <Input
                 placeholder="mail@exemplo.com.br"
                 label="Email"
@@ -73,7 +80,6 @@ export function SignIn() {
                 keyboardType="email-address"
                 autoCapitalize="none"
                 onChangeText={onChange}
-                value={value}
                 errorMessage={errors.email?.message}
               />
             )}
@@ -81,7 +87,7 @@ export function SignIn() {
           <Controller
             control={control}
             name="password"
-            render={({ field: { onChange, value } }) => (
+            render={({ field: { onChange } }) => (
               <Input
                 placeholder="Sua senha"
                 label="Senha"
@@ -90,7 +96,6 @@ export function SignIn() {
                 secureTextEntry={!showPassword}
                 showPassword={handlePasswordState}
                 onChangeText={onChange}
-                value={value}
                 errorMessage={errors.password?.message}
                 onSubmitEditing={handleSubmit(handleSignIn)}
                 returnKeyType="send"

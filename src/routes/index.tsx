@@ -11,13 +11,11 @@ export function Routes() {
   theme.colors.background = gluestackUIConfig.tokens.colors.background
 
   const { user } = useAuth()
-  console.log('usuário logado', user)
 
   return (
     <Box flex={1} bg="$shape">
       <NavigationContainer theme={theme}>
-        {/* <AppRoutes /> */}
-        <AuthRoutes />
+        {user.id ? <AppRoutes /> : <AuthRoutes />}
       </NavigationContainer>
     </Box>
   )

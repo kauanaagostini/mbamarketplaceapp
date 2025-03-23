@@ -5,5 +5,5 @@ export type UserDTO = {
   name: string
   phone: string
   email: string
-  avatar: AtachmentDTO
+  avatar: AtachmentDTO | null
 }
