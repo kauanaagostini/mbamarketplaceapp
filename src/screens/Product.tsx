@@ -1,6 +1,6 @@
 import { Box, Heading, HStack, Image, Text, VStack } from '@gluestack-ui/themed'
 import { Platform, TouchableOpacity } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
 
 import { gluestackUIConfig } from '../../config/gluestack-ui.config'
 
@@ -8,15 +8,51 @@ import ArrowLeftSvg from '@assets/icon/arrow-left.svg'
 import ChartHistogramSvg from '@assets/icon/chart-histogram.svg'
 import ImageTest from '@assets/image/1e6bb3c6-9f03-4651-93c7-18dfedc28364.png'
 import { Button } from '@components/Button'
+import { getProductDetails } from '@services/ProductService'
+import { useEffect, useState } from 'react'
+import { ProductDTO } from '@dtos/ProductDTO'
+
+type RoutesParamsProps = {
+  productId: string
+}
 
 export function Product() {
-  const { tokens } = gluestackUIConfig
+  const [product, setProduct] = useState<ProductDTO>()
 
   const navigation = useNavigation()
+  const route = useRoute()
+
+  const { tokens } = gluestackUIConfig
+  const { productId } = route.params as RoutesParamsProps
 
   const handleGoBack = () => {
     navigation.goBack()
   }
+
+  const handleProductPrice = (productPriceInCents: number) => {
+    const productPrice = productPriceInCents / 100
+    const editValue = productPrice
+      .toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+      })
+      .replace('R$', '')
+
+    return editValue
+  }
+
+  const fetchProductDetails = async () => {
+    try {
+      const { product } = await getProductDetails({ productId })
+      setProduct(product)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    fetchProductDetails()
+  }, [productId])
 
   return (
     <VStack mt="$24" flex={1}>
@@ -45,14 +81,16 @@ export function Product() {
           w="$full"
           h={197}
           alt="Imagem do produto"
-          source={ImageTest}
+          source={{
+            uri: product?.attachments[0].url,
+          }}
           mt="$4"
           mb="$7"
         />
         <VStack gap="$7">
           <HStack justifyContent="space-between">
             <Heading fontFamily="$title" fontWeight="$bold" fontSize="$xl">
-              Carrinho de Brinquedo
+              {product?.title}
             </Heading>
             <HStack alignItems="flex-end" gap="$1">
               <Text
@@ -65,7 +103,7 @@ export function Product() {
                 R$
               </Text>
               <Heading fontFamily="$title" fontWeight="$bold" fontSize="$xl">
-                35,89
+                {product && handleProductPrice(product.priceInCents)}
               </Heading>
             </HStack>
           </HStack>
@@ -76,14 +114,7 @@ export function Product() {
               fontSize="$sm"
               mb="$4"
             >
-              Sofá revestido em couro legítimo, com estrutura em madeira maciça
-              e pés em metal cromado.
-            </Text>
-            <Text fontFamily="$body" fontWeight="$regular" fontSize="$sm">
-              Largura: 1,80m
-            </Text>
-            <Text fontFamily="$body" fontWeight="$regular" fontSize="$sm">
-              Altura do chão: 20cm
+              {product?.description}
             </Text>
           </VStack>
           <VStack>
@@ -91,7 +122,7 @@ export function Product() {
               Categoria
             </Text>
             <Text fontFamily="$body" fontWeight="$regular" fontSize="$xs">
-              Móvel
+              {product?.category?.title}
             </Text>
           </VStack>
           <HStack

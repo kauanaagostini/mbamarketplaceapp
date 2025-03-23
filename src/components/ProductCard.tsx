@@ -29,7 +29,9 @@ export function ProductCard({ data, ...rest }: Props) {
           resizeMode="cover"
           w={167}
           alt="Imagem do produto"
-          source={ImageTest}
+          source={{
+            uri: data.attachments[0].url,
+          }}
         />
         <VStack p="$1" gap={2}>
           <Text

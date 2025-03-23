@@ -16,5 +16,5 @@ export type ProductDTO = {
   status?: Status
   owner?: UserDTO
   category?: CategoryDTO
-  attachments?: [AtachmentDTO]
+  attachments: AtachmentDTO[] | []
 }

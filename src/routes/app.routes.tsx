@@ -14,8 +14,7 @@ import { Platform } from 'react-native'
 type AppRoutes = {
   home: undefined
   profile: undefined
-  product: undefined
-  // product: { productId: string }
+  product: { productId: string }
 }
 
 export type AppNavigatorRoutesProps = BottomTabNavigationProp<AppRoutes>
